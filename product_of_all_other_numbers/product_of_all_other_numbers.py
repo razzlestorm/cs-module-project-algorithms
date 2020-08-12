@@ -1,11 +1,16 @@
+import math
 '''
 Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
-
-    pass
+    copy = arr[:]
+    x = 0
+    while x < len(arr):
+        arr[x] = math.prod(copy[:x] + copy[x+1:])
+        x += 1
+    return arr
 
 
 if __name__ == '__main__':
