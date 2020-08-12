@@ -3,9 +3,12 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def moving_zeroes(arr):
-    # Your code here
+    # Check for non-0s
+    non_z = [x for x in arr if x is not 0]
+    z = [0]*(len(arr)-len(non_z))
+    non_z.extend(z)
 
-    pass
+    return non_z
 
 
 if __name__ == '__main__':
