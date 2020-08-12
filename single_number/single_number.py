@@ -1,11 +1,10 @@
+from collections import Counter
 '''
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    # Your code here
-
-    pass
+    return [num for num in Counter(arr) if Counter(arr)[num] < 2][0]
 
 
 if __name__ == '__main__':
