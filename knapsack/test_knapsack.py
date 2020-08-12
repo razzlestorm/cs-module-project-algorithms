@@ -6,10 +6,11 @@ from knapsack import knapsack_solver
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 class Test(unittest.TestCase):
+  maxDiff = None
   def setUp_small(self):
     file_contents = open('data/small1.txt', 'r')
     self.small_1_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.small_1_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -18,7 +19,7 @@ class Test(unittest.TestCase):
 
     file_contents = open('data/small2.txt', 'r')
     self.small_2_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.small_2_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -27,7 +28,7 @@ class Test(unittest.TestCase):
 
     file_contents = open('data/small3.txt', 'r')
     self.small_3_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.small_3_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -42,7 +43,7 @@ class Test(unittest.TestCase):
   def setUp_medium(self):
     file_contents = open('data/medium1.txt', 'r')
     self.medium_1_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.medium_1_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -51,7 +52,7 @@ class Test(unittest.TestCase):
 
     file_contents = open('data/medium2.txt', 'r')
     self.medium_2_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.medium_2_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -60,7 +61,7 @@ class Test(unittest.TestCase):
 
     file_contents = open('data/medium3.txt', 'r')
     self.medium_3_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.medium_3_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -75,7 +76,7 @@ class Test(unittest.TestCase):
   def setUp_large(self):
     file_contents = open('data/large1.txt', 'r')
     self.large_1_items = []
-    
+
     for line in file_contents.readlines():
       data = line.rstrip().split()
       self.large_1_items.append(Item(int(data[0]), int(data[1]), int(data[2])))
@@ -96,7 +97,7 @@ class Test(unittest.TestCase):
     self.setUp_medium()
     self.assertEqual(knapsack_solver(self.medium_1_items, 100), {'Value': 1042, 'Chosen': [44, 49, 60, 77, 80, 83, 94, 104, 107, 117, 127, 134, 157, 160, 170]})
     self.assertEqual(knapsack_solver(self.medium_2_items, 100), {'Value': 969, 'Chosen': [1, 10, 27, 28, 66, 120, 139, 145, 153, 155, 174, 188, 191]})
-    self.assertEqual(knapsack_solver(self.medium_3_items, 100), {'Value': 868, 'Chosen': [9, 14, 15, 47, 68, 108, 116, 120, 133, 154, 158, 161, 164, 170, 181, 198]}) 
+    self.assertEqual(knapsack_solver(self.medium_3_items, 100), {'Value': 868, 'Chosen': [9, 14, 15, 47, 68, 108, 116, 120, 133, 154, 158, 161, 164, 170, 181, 198]})
     self.cleanUp_medium()
 
   def test_with_large_input(self):
