@@ -5,8 +5,8 @@ Given an array of integers, there is a sliding window of size `k` which is movin
 ## Example
 ```
 Sample Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
-Expected Output: [3,3,5,5,6,7] 
-Explanation: 
+Expected Output: [3,3,5,5,6,7]
+Explanation:
 
 Window position                Max
 ---------------               -----
@@ -20,9 +20,9 @@ Window position                Max
 
  Can you implement a solution that calculates all of the maximum sliding window values in O(n) time?
 
- ## Testing 
-Run the test file by executing  `python test_sliding_window_max.py`. 
+ ## Testing
+Run the test file by executing  `python test_sliding_window_max.py`.
 
 There is also a larger test file that you can test your code against by running `python test_sliding_window_max_large_input.py`.
 
-> Note: The text files in the `data/` directory are used by the large input tests. 
+> Note: The text files in the `data/` directory are used by the large input tests.
