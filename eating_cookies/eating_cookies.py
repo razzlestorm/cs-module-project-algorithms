@@ -2,20 +2,16 @@
 Input: an integer
 Returns: an integer
 '''
-def eating_cookies(n):
-    # check for negatives and 0
-    methods = [3, 2, 1]
-    if n <= 0:
+def eating_cookies(n, *args):
+    # base case
+    if n == 0:
+        return 1
+    elif n < 0:
         return 0
 
     else:
-        for m in methods:
-            # Making sure number is greater than cookie-eating methods
-            if n - m < 0:
-                continue
-            else:
-                for num in methods:
-
+        # make three recursive calls
+        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
         # Create a set that will store each solution (helps with duplicates),
 
         # check what combination of steps can = n
